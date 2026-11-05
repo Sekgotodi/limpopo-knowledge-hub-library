@@ -1,0 +1,1996 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limpopo Knowledge Hub Library | Empowering Learning & Research</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Playfair Display for academic elegance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome for academic icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#080d1a',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        forest: {
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        heading: ['Cinzel', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+        }
+        .hero-pattern {
+            background-color: #0f172a;
+            background-image: radial-gradient(rgba(245, 158, 11, 0.12) 1px, transparent 0), radial-gradient(rgba(16, 185, 129, 0.08) 1px, #0b1120 0);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-slate-50 selection:bg-amber-500 selection:text-white">
+
+    <!-- Top Notification Bar -->
+    <div class="bg-navy-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Library Open Today
+                </span>
+                <span class="hidden sm:inline text-slate-400">|</span>
+                <span class="hidden sm:inline"><i class="far fa-clock mr-1 text-gold-500"></i> Mon–Fri: 08:00–17:00 • Sat: 09:00–13:00</span>
+            </div>
+            <div class="flex items-center gap-4 text-xs">
+                <a href="#ask" class="hover:text-amber-400 transition-colors flex items-center gap-1">
+                    <i class="far fa-envelope"></i> Reference Desk: Kabelo Ramokgopa
+                </a>
+                <span class="text-slate-600">|</span>
+                <span class="text-amber-400/90 font-mono"><i class="fab fa-whatsapp"></i> +27 00 000 0000</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Branding / Logo -->
+                <a href="#" class="flex items-center gap-3.5 group">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-navy-900 to-slate-800 text-gold-500 flex items-center justify-center shadow-md shadow-slate-900/10 border border-slate-700/20 group-hover:scale-105 transition-transform">
+                        <i class="fas fa-book-open-reader text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold text-navy-900 tracking-tight leading-tight block font-heading">
+                            Limpopo Knowledge Hub
+                        </span>
+                        <span class="text-xs uppercase tracking-widest text-emerald-700 font-semibold block">
+                            Academic Library
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-700">
+                    <a href="#home" class="hover:text-amber-600 transition-colors py-1">Home</a>
+                    <a href="#about" class="hover:text-amber-600 transition-colors py-1">About & Staff</a>
+                    <a href="#services" class="hover:text-amber-600 transition-colors py-1">Services</a>
+                    <a href="#databases" class="hover:text-amber-600 transition-colors py-1">Research Databases</a>
+                    <a href="#rules" class="hover:text-amber-600 transition-colors py-1">Rules</a>
+                    <a href="#survey" class="hover:text-amber-600 transition-colors py-1">User Survey</a>
+                </nav>
+
+                <!-- Actions: Catalogue Quick Search & Ask Button -->
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="#ask" class="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-navy-900 text-amber-400 hover:bg-slate-800 border border-amber-500/30 transition-all shadow-sm">
+                        <i class="fas fa-headset text-gold-500"></i> Ask a Librarian
+                    </a>
+                    <a href="#catalogue" class="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-emerald-700 text-white hover:bg-emerald-800 transition-all shadow-sm">
+                        <i class="fas fa-magnifying-glass"></i> Search Catalogue
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="flex lg:hidden items-center">
+                    <button id="mobileMenuBtn" aria-label="Toggle navigation menu" class="p-2.5 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none">
+                        <i class="fas fa-bars text-xl" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2 shadow-xl">
+            <a href="#home" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-slate-50">Home</a>
+            <a href="#about" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-slate-50">About & Staff</a>
+            <a href="#services" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-slate-50">Services & Catalogue</a>
+            <a href="#databases" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-slate-50">Free Databases</a>
+            <a href="#ask" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-slate-50">Ask a Librarian</a>
+            <a href="#survey" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-slate-50">Satisfaction Survey</a>
+            <a href="#rules" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-slate-50">Rules & Regulations</a>
+            <div class="pt-2 flex flex-col gap-2">
+                <a href="#ask" class="text-center px-4 py-2.5 text-sm font-semibold rounded-lg bg-navy-900 text-amber-400">Ask Reference Desk</a>
+                <a href="#catalogue" class="text-center px-4 py-2.5 text-sm font-semibold rounded-lg bg-emerald-700 text-white">Search Catalogue</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="home" class="relative hero-pattern text-white py-16 lg:py-24 overflow-hidden border-b border-slate-800">
+            <!-- Decorative Glow Elements -->
+            <div class="absolute top-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-0 left-10 w-80 h-80 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-amber-400 text-xs tracking-wider uppercase font-semibold">
+                            <i class="fas fa-graduation-cap"></i> Academic Center of Excellence
+                        </div>
+                        
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif leading-tight text-white tracking-tight">
+                            Welcome to <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-emerald-300">
+                                Limpopo Knowledge Hub Library
+                            </span>
+                        </h1>
+                        
+                        <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-light max-w-2xl">
+                            A modern academic library dedicated to providing seamless access to information, supporting scholarly education, encouraging cutting-edge research, and promoting lifelong learning across our community.
+                        </p>
+
+                        <!-- Highlights Banner: Vision & Mission Badges -->
+                        <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-left">
+                                <div class="text-xs uppercase font-bold tracking-wider text-amber-400 mb-1 flex items-center gap-2">
+                                    <i class="fas fa-eye text-sm"></i> Vision
+                                </div>
+                                <p class="text-xs text-slate-300 leading-normal">
+                                    To become a leading centre of knowledge, innovation and information access that empowers individuals through learning and research.
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-left">
+                                <div class="text-xs uppercase font-bold tracking-wider text-emerald-400 mb-1 flex items-center gap-2">
+                                    <i class="fas fa-bullseye text-sm"></i> Mission
+                                </div>
+                                <p class="text-xs text-slate-300 leading-normal">
+                                    To provide reliable, relevant and accessible information resources and professional library services that support teaching, learning, and research.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                            <a href="#catalogue" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-navy-950 font-bold text-sm shadow-lg shadow-amber-500/25 hover:from-amber-400 hover:to-amber-500 transition-all transform hover:-translate-y-0.5">
+                                <i class="fas fa-magnifying-glass mr-2"></i> Search Resources
+                            </a>
+                            <a href="#ask" class="px-6 py-3.5 rounded-xl bg-slate-800 text-white font-semibold text-sm border border-slate-700 hover:bg-slate-700/80 transition-all">
+                                <i class="fas fa-user-graduate mr-2 text-gold-400"></i> Ask a Librarian
+                            </a>
+                            <a href="#survey" class="px-6 py-3.5 rounded-xl bg-emerald-950/80 text-emerald-300 font-semibold text-sm border border-emerald-800/80 hover:bg-emerald-900 transition-all">
+                                <i class="fas fa-clipboard-check mr-2"></i> Feedback Survey
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Operating Hours Card & Quick Stats -->
+                    <div class="lg:col-span-5">
+                        <div class="glass-panel text-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl border border-slate-200/80 relative overflow-hidden">
+                            <div class="absolute -top-12 -right-12 w-32 h-32 bg-amber-500/10 rounded-full blur-xl"></div>
+                            
+                            <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+                                <div>
+                                    <span class="text-xs uppercase tracking-wider font-bold text-emerald-800">Operational Notice</span>
+                                    <h3 class="text-xl font-bold font-serif text-navy-900">Library Operating Hours</h3>
+                                </div>
+                                <span class="p-2.5 rounded-lg bg-amber-100 text-amber-800">
+                                    <i class="fas fa-door-open text-lg"></i>
+                                </span>
+                            </div>
+
+                            <ul class="space-y-4 py-5 text-sm">
+                                <li class="flex items-center justify-between py-2 border-b border-slate-100">
+                                    <span class="font-medium text-slate-600 flex items-center gap-2">
+                                        <i class="far fa-calendar-check text-emerald-600"></i> Monday – Friday
+                                    </span>
+                                    <span class="font-bold text-navy-900 bg-slate-100 px-3 py-1 rounded-md font-mono">08:00 – 17:00</span>
+                                </li>
+                                <li class="flex items-center justify-between py-2 border-b border-slate-100">
+                                    <span class="font-medium text-slate-600 flex items-center gap-2">
+                                        <i class="far fa-calendar-check text-emerald-600"></i> Saturday
+                                    </span>
+                                    <span class="font-bold text-navy-900 bg-slate-100 px-3 py-1 rounded-md font-mono">09:00 – 13:00</span>
+                                </li>
+                                <li class="flex items-center justify-between py-2">
+                                    <span class="font-medium text-rose-700 flex items-center gap-2">
+                                        <i class="fas fa-ban text-rose-500"></i> Sunday & Public Holidays
+                                    </span>
+                                    <span class="font-bold text-rose-700 bg-rose-50 px-3 py-1 rounded-md">Closed</span>
+                                </li>
+                            </ul>
+
+                            <div class="mt-2 p-3.5 rounded-xl bg-amber-50/80 border border-amber-200 text-xs text-amber-900 flex items-start gap-2.5">
+                                <i class="fas fa-circle-info text-amber-600 mt-0.5"></i>
+                                <span><strong>Academic Notice:</strong> These are proposed operating hours for the fictional Limpopo Knowledge Hub Library. After-hours electronic resources remain accessible 24/7 online.</span>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3 mt-4 pt-3 border-t border-slate-200 text-center">
+                                <div class="p-2 rounded-lg bg-slate-50">
+                                    <div class="text-xl font-bold font-serif text-navy-900">7+</div>
+                                    <div class="text-[11px] text-slate-500 font-medium">Free Databases</div>
+                                </div>
+                                <div class="p-2 rounded-lg bg-slate-50">
+                                    <div class="text-xl font-bold font-serif text-emerald-700">4 Specialists</div>
+                                    <div class="text-[11px] text-slate-500 font-medium">Staff Librarians</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT & VALUES SECTION -->
+        <section id="about" class="py-16 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="text-xs font-bold tracking-widest text-emerald-700 uppercase">Institutional Foundation</span>
+                    <h2 class="text-3xl font-bold font-serif text-navy-900 mt-1">About Limpopo Knowledge Hub Library</h2>
+                    <div class="w-16 h-1 bg-amber-500 mx-auto my-4 rounded-full"></div>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        Limpopo Knowledge Hub Library is a fictional academic library established to support students, educators, researchers, and community members in their pursuit of knowledge through print collections, electronic databases, and dedicated research literacy assistance.
+                    </p>
+                </div>
+
+                <!-- Goals and Strategic Pillars -->
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <!-- Our Strategic Goals -->
+                    <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+                                <i class="fas fa-bullseye"></i>
+                            </span>
+                            <h3 class="text-xl font-bold font-serif text-navy-900">Our Strategic Goals</h3>
+                        </div>
+                        <ul class="space-y-3.5">
+                            <li class="flex items-start gap-3 text-sm text-slate-700">
+                                <i class="fas fa-check-circle text-emerald-600 mt-1 shrink-0"></i>
+                                <span><strong>Promote lifelong learning:</strong> Cultivate a vibrant culture of reading and intellectual curiosity throughout the academic community.</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-slate-700">
+                                <i class="fas fa-check-circle text-emerald-600 mt-1 shrink-0"></i>
+                                <span><strong>Provide comprehensive access:</strong> Maintain curated print and electronic information resources supporting institutional curricula.</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-slate-700">
+                                <i class="fas fa-check-circle text-emerald-600 mt-1 shrink-0"></i>
+                                <span><strong>Support academic research:</strong> Guide students and faculty with research methodologies and deep information literacy.</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-slate-700">
+                                <i class="fas fa-check-circle text-emerald-600 mt-1 shrink-0"></i>
+                                <span><strong>Ethical information use:</strong> Encourage academic integrity, responsible referencing, and intellectual property compliance.</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-slate-700">
+                                <i class="fas fa-check-circle text-emerald-600 mt-1 shrink-0"></i>
+                                <span><strong>Digital technology integration:</strong> Improve accessibility through modern open-access digital repositories and remote tools.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Annual Reports & Operational Overview -->
+                    <div class="bg-gradient-to-br from-navy-900 to-slate-800 p-6 sm:p-8 rounded-2xl text-white shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold border border-amber-500/30">
+                                    <i class="fas fa-chart-line"></i>
+                                </span>
+                                <div>
+                                    <span class="text-xs uppercase tracking-wider text-amber-400 font-semibold block">Institutional Governance</span>
+                                    <h3 class="text-xl font-bold font-serif text-white">Annual Reports & Audits</h3>
+                                </div>
+                            </div>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                                The library produces comprehensive annual accountability reports detailing collection development, visitor footfall, circulation statistics, research database utilization, and strategic milestone achievements.
+                            </p>
+                            <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700 text-xs text-slate-300 space-y-2">
+                                <div class="flex items-center gap-2 text-amber-300 font-semibold">
+                                    <i class="fas fa-info-circle"></i> Operational Note:
+                                </div>
+                                <p>
+                                    As this is a mock academic library designed for demonstration and educational purposes, actual annual reports, institutional audits, and live checkout tallies are simulated.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 mt-4 border-t border-slate-700/80 flex flex-wrap items-center justify-between gap-3">
+                            <span class="text-xs text-slate-400 font-mono">Report Cycle: 2025/2026 Academic Year</span>
+                            <button onclick="simulateReportDownload()" class="px-4 py-2 bg-amber-500 text-navy-950 rounded-lg text-xs font-bold hover:bg-amber-400 transition-colors inline-flex items-center gap-2">
+                                <i class="fas fa-file-pdf"></i> Download Mock Summary (PDF)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Values Cards -->
+                <div class="mb-16">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold font-serif text-navy-900">Our Core Values</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm">Guiding principles shaping our librarianship and public service</p>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                        <!-- Value 1 -->
+                        <div class="p-5 rounded-xl bg-white border border-slate-200 hover:border-emerald-500 hover:shadow-md transition-all group text-center">
+                            <div class="w-12 h-12 mx-auto rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl mb-3 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <i class="fas fa-universal-access"></i>
+                            </div>
+                            <h4 class="font-bold text-navy-900 text-sm mb-1">Accessibility</h4>
+                            <p class="text-xs text-slate-600">Providing equal, barrier-free opportunities for all users to access information resources.</p>
+                        </div>
+
+                        <!-- Value 2 -->
+                        <div class="p-5 rounded-xl bg-white border border-slate-200 hover:border-emerald-500 hover:shadow-md transition-all group text-center">
+                            <div class="w-12 h-12 mx-auto rounded-full bg-amber-50 text-amber-600 flex items-center justify-center text-xl mb-3 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                                <i class="fas fa-scale-balanced"></i>
+                            </div>
+                            <h4 class="font-bold text-navy-900 text-sm mb-1">Integrity</h4>
+                            <p class="text-xs text-slate-600">Promoting honesty, transparency, academic originality, and ethical information use.</p>
+                        </div>
+
+                        <!-- Value 3 -->
+                        <div class="p-5 rounded-xl bg-white border border-slate-200 hover:border-emerald-500 hover:shadow-md transition-all group text-center">
+                            <div class="w-12 h-12 mx-auto rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl mb-3 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h4 class="font-bold text-navy-900 text-sm mb-1">Professionalism</h4>
+                            <p class="text-xs text-slate-600">Delivering quality, courteous, expert, and prompt academic library services.</p>
+                        </div>
+
+                        <!-- Value 4 -->
+                        <div class="p-5 rounded-xl bg-white border border-slate-200 hover:border-emerald-500 hover:shadow-md transition-all group text-center">
+                            <div class="w-12 h-12 mx-auto rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl mb-3 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4 class="font-bold text-navy-900 text-sm mb-1">Innovation</h4>
+                            <p class="text-xs text-slate-600">Embracing modern digital technologies, hybrid cataloguing, and emerging learning tools.</p>
+                        </div>
+
+                        <!-- Value 5 -->
+                        <div class="p-5 rounded-xl bg-white border border-slate-200 hover:border-emerald-500 hover:shadow-md transition-all group text-center">
+                            <div class="w-12 h-12 mx-auto rounded-full bg-rose-50 text-rose-600 flex items-center justify-center text-xl mb-3 group-hover:bg-rose-600 group-hover:text-white transition-colors">
+                                <i class="fas fa-handshake-angle"></i>
+                            </div>
+                            <h4 class="font-bold text-navy-900 text-sm mb-1">Respect</h4>
+                            <p class="text-xs text-slate-600">Treating all library patrons, students, and colleagues with dignity, fairness, and empathy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Staff Directory -->
+                <div>
+                    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 pb-4 border-b border-slate-200">
+                        <div>
+                            <span class="text-xs font-bold tracking-widest text-emerald-700 uppercase">Meet Our Team</span>
+                            <h3 class="text-2xl font-bold font-serif text-navy-900">Professional Staff Directory</h3>
+                        </div>
+                        <p class="text-slate-500 text-xs sm:text-sm mt-2 sm:mt-0">Dedicated professionals ready to assist with your academic journey</p>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        
+                        <!-- Staff 1 -->
+                        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="w-16 h-16 rounded-2xl bg-slate-900 text-amber-400 font-serif font-bold text-xl flex items-center justify-center shadow-md mb-4 border-2 border-amber-400/40">
+                                    NM
+                                </div>
+                                <span class="px-2.5 py-0.5 rounded text-[11px] font-semibold bg-slate-100 text-slate-700 uppercase tracking-wider inline-block mb-2">Executive</span>
+                                <h4 class="text-lg font-bold text-navy-900">Naledi Mokoena</h4>
+                                <p class="text-xs font-semibold text-emerald-700 mb-3">Library Manager</p>
+                                <p class="text-xs text-slate-600 leading-relaxed">
+                                    Responsible for managing overall library operations, developing strategic policies, supervising professional staff, and ensuring services meet modern student & faculty needs.
+                                </p>
+                            </div>
+                            <div class="pt-4 mt-4 border-t border-slate-100 text-[11px] text-slate-500 flex items-center gap-2">
+                                <i class="fas fa-briefcase text-slate-400"></i> Office of the Director
+                            </div>
+                        </div>
+
+                        <!-- Staff 2 -->
+                        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between border-t-4 border-t-amber-500">
+                            <div>
+                                <div class="w-16 h-16 rounded-2xl bg-amber-600 text-white font-serif font-bold text-xl flex items-center justify-center shadow-md mb-4">
+                                    KR
+                                </div>
+                                <span class="px-2.5 py-0.5 rounded text-[11px] font-semibold bg-amber-50 text-amber-800 uppercase tracking-wider inline-block mb-2">Research Lead</span>
+                                <h4 class="text-lg font-bold text-navy-900">Kabelo Ramokgopa</h4>
+                                <p class="text-xs font-semibold text-emerald-700 mb-3">Reference Librarian</p>
+                                <p class="text-xs text-slate-600 leading-relaxed">
+                                    Assists users with in-depth academic research, database queries, referencing styles (APA/Harvard), literature reviews, and electronic resource access.
+                                </p>
+                            </div>
+                            <div class="pt-4 mt-4 border-t border-slate-100 text-[11px] text-slate-500 flex items-center gap-2">
+                                <i class="far fa-envelope text-amber-600"></i> librarian@example.com
+                            </div>
+                        </div>
+
+                        <!-- Staff 3 -->
+                        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="w-16 h-16 rounded-2xl bg-emerald-700 text-white font-serif font-bold text-xl flex items-center justify-center shadow-md mb-4">
+                                    TN
+                                </div>
+                                <span class="px-2.5 py-0.5 rounded text-[11px] font-semibold bg-slate-100 text-slate-700 uppercase tracking-wider inline-block mb-2">Front Desk</span>
+                                <h4 class="text-lg font-bold text-navy-900">Thato Nkuna</h4>
+                                <p class="text-xs font-semibold text-emerald-700 mb-3">Circulation Librarian</p>
+                                <p class="text-xs text-slate-600 leading-relaxed">
+                                    Manages physical book borrowing and returns, new patron membership registration, loan renewals, inter-branch requests, and overdue collection notices.
+                                </p>
+                            </div>
+                            <div class="pt-4 mt-4 border-t border-slate-100 text-[11px] text-slate-500 flex items-center gap-2">
+                                <i class="fas fa-id-card text-emerald-600"></i> Main Circulation Desk
+                            </div>
+                        </div>
+
+                        <!-- Staff 4 -->
+                        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="w-16 h-16 rounded-2xl bg-indigo-700 text-white font-serif font-bold text-xl flex items-center justify-center shadow-md mb-4">
+                                    PM
+                                </div>
+                                <span class="px-2.5 py-0.5 rounded text-[11px] font-semibold bg-slate-100 text-slate-700 uppercase tracking-wider inline-block mb-2">Technology</span>
+                                <h4 class="text-lg font-bold text-navy-900">Palesa Matlala</h4>
+                                <p class="text-xs font-semibold text-emerald-700 mb-3">Digital Services Librarian</p>
+                                <p class="text-xs text-slate-600 leading-relaxed">
+                                    Supports patrons with online institutional repositories, remote proxy credentials, digital literacy workshops, Wi-Fi connectivity, and IT inquiries.
+                                </p>
+                            </div>
+                            <div class="pt-4 mt-4 border-t border-slate-100 text-[11px] text-slate-500 flex items-center gap-2">
+                                <i class="fas fa-laptop-code text-indigo-600"></i> Digital Commons & Lab
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SERVICES & CATALOGUE SEARCH SECTION -->
+        <section id="services" class="py-16 bg-slate-100/70 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs font-bold tracking-widest text-emerald-700 uppercase">Library Guide</span>
+                    <h2 class="text-3xl font-bold font-serif text-navy-900 mt-1">Our Core Services & Facilities</h2>
+                    <div class="w-16 h-1 bg-amber-500 mx-auto my-3 rounded-full"></div>
+                    <p class="text-slate-600 text-sm">Everything you need to succeed in your academic and educational endeavors.</p>
+                </div>
+
+                <!-- 6 Service Cards -->
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                    
+                    <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="font-bold text-navy-900 text-base mb-2">Book Borrowing & Returning</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Check out undergraduate and postgraduate textbooks, reserve collections, and general fiction. Quick self-checkout stations and hassle-free return boxes available.
+                        </p>
+                        <span class="text-xs font-semibold text-amber-700 inline-flex items-center gap-1">
+                            Managed by Thato Nkuna <i class="fas fa-arrow-right text-[10px]"></i>
+                        </span>
+                    </div>
+
+                    <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-magnifying-glass-chart"></i>
+                        </div>
+                        <h3 class="font-bold text-navy-900 text-base mb-2">Reference & Research Assistance</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            One-on-one appointments for literature searches, citation verification, Boolean search formulas, dissertation reference checking, and journal identification.
+                        </p>
+                        <span class="text-xs font-semibold text-emerald-700 inline-flex items-center gap-1">
+                            Managed by Kabelo Ramokgopa <i class="fas fa-arrow-right text-[10px]"></i>
+                        </span>
+                    </div>
+
+                    <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-800 flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="font-bold text-navy-900 text-base mb-2">Access to Electronic Databases</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Direct, curated access to verified global peer-reviewed repositories, open-access journal collections, and digital repositories available on or off campus.
+                        </p>
+                        <span class="text-xs font-semibold text-blue-700 inline-flex items-center gap-1">
+                            Managed by Palesa Matlala <i class="fas fa-arrow-right text-[10px]"></i>
+                        </span>
+                    </div>
+
+                    <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-800 flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <h3 class="font-bold text-navy-900 text-base mb-2">Internet & Quiet Study Facilities</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            High-speed campus Wi-Fi, dedicated quiet study cubicles, collaborative group discussion zones, and desktop PC terminals with printing and scanning capabilities.
+                        </p>
+                        <span class="text-xs font-semibold text-purple-700 inline-flex items-center gap-1">
+                            Silent & Group Zones <i class="fas fa-check text-[10px]"></i>
+                        </span>
+                    </div>
+
+                    <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-800 flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-chalkboard-user"></i>
+                        </div>
+                        <h3 class="font-bold text-navy-900 text-base mb-2">Information Literacy Training</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Regular workshops on identifying credible scholarly sources, avoiding predatory journals, copyright compliance, plagiarism avoidance, and reference management tools.
+                        </p>
+                        <span class="text-xs font-semibold text-rose-700 inline-flex items-center gap-1">
+                            Weekly Workshops <i class="fas fa-calendar-days text-[10px]"></i>
+                        </span>
+                    </div>
+
+                    <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-bookmark"></i>
+                        </div>
+                        <h3 class="font-bold text-navy-900 text-base mb-2">Book Recommendations & Requests</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Can't find what you need on our shelves? Submit recommendations for new library acquisitions, textbook reserve additions, or inter-library loan dispatches.
+                        </p>
+                        <a href="#ask" class="text-xs font-semibold text-amber-800 inline-flex items-center gap-1 hover:underline">
+                            Submit a Book Request <i class="fas fa-paper-plane text-[10px]"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Interactive Mock Catalogue Search Tool -->
+                <div id="catalogue" class="bg-navy-900 rounded-3xl p-6 sm:p-10 text-white shadow-xl border border-slate-800">
+                    <div class="max-w-3xl mb-6">
+                        <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Online Public Access Catalogue (OPAC)</span>
+                        <h3 class="text-2xl sm:text-3xl font-serif font-bold text-white mt-1">Search the Library Catalogue</h3>
+                        <p class="text-slate-300 text-xs sm:text-sm mt-1">Explore available printed monographs, dissertations, academic journals, and digital reserves.</p>
+                    </div>
+
+                    <!-- Filter & Search Bar -->
+                    <div class="space-y-4">
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <button onclick="setCatalogueFilter('all')" id="filter-all" class="cat-filter-btn px-4 py-2 rounded-lg bg-amber-500 text-navy-950 font-bold transition-colors">
+                                All Formats
+                            </button>
+                            <button onclick="setCatalogueFilter('books')" id="filter-books" class="cat-filter-btn px-4 py-2 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 transition-colors">
+                                <i class="fas fa-book mr-1"></i> Books (Print)
+                            </button>
+                            <button onclick="setCatalogueFilter('journals')" id="filter-journals" class="cat-filter-btn px-4 py-2 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 transition-colors">
+                                <i class="fas fa-newspaper mr-1"></i> Journals
+                            </button>
+                            <button onclick="setCatalogueFilter('eresources')" id="filter-eresources" class="cat-filter-btn px-4 py-2 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 transition-colors">
+                                <i class="fas fa-laptop mr-1"></i> e-Resources
+                            </button>
+                        </div>
+
+                        <div class="relative">
+                            <input type="text" id="catalogueSearchInput" oninput="filterCatalogueItems()" placeholder="Search by title, author, keyword, or ISBN (e.g. 'Research Methodology', 'South Africa', 'Healthcare')..." class="w-full bg-slate-800/90 border border-slate-700 rounded-xl px-5 py-4 pl-12 text-sm text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                            <button onclick="clearCatalogueSearch()" class="absolute right-4 top-1/2 -translate-y-1/2 text-xs bg-slate-700 hover:bg-slate-600 text-slate-300 px-2 py-1 rounded">
+                                Clear
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Catalogue Results Grid -->
+                    <div class="mt-6">
+                        <div class="text-xs text-slate-400 mb-3 flex items-center justify-between">
+                            <span id="resultsCount">Showing sample catalogued holdings</span>
+                            <span class="text-emerald-400"><i class="fas fa-check-circle mr-1"></i> Real-time Shelving Status</span>
+                        </div>
+
+                        <div id="catalogueResults" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <!-- Items injected via JS -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FREE ONLINE DATABASES & RESEARCH RESOURCES -->
+        <section id="databases" class="py-16 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs font-bold tracking-widest text-emerald-700 uppercase">Scholarly Repositories</span>
+                    <h2 class="text-3xl font-bold font-serif text-navy-900 mt-1">Free Online Databases & Research Portals</h2>
+                    <div class="w-16 h-1 bg-amber-500 mx-auto my-3 rounded-full"></div>
+                    <p class="text-slate-600 text-sm">
+                        Limpopo Knowledge Hub Library connects students, educators, and scholars with authoritative, independently operated open-access research repositories.
+                    </p>
+                </div>
+
+                <!-- Database Cards Grid (All 7 Recommended Resources) -->
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    
+                    <!-- 1. Google Scholar -->
+                    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between hover:border-amber-400 group">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-700 border border-blue-200">
+                                    Multidisciplinary
+                                </span>
+                                <span class="text-xs text-slate-400 font-mono">Global Index</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-navy-900 group-hover:text-amber-600 transition-colors flex items-center gap-2">
+                                <span>Google Scholar</span>
+                            </h3>
+                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                Broad search engine for scholarly literature across disciplines, including peer-reviewed papers, theses, books, preprints, abstracts, and court opinions.
+                            </p>
+                        </div>
+                        <div class="pt-5 mt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-[11px] text-slate-400">Indexed Worldwide</span>
+                            <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200 hover:bg-emerald-100 transition-all">
+                                Open Portal <i class="fas fa-external-link-alt text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 2. DOAJ -->
+                    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between hover:border-amber-400 group">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 border border-emerald-200">
+                                    Open Access Journals
+                                </span>
+                                <span class="text-xs text-slate-400 font-mono">Peer-Reviewed</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-navy-900 group-hover:text-amber-600 transition-colors">
+                                Directory of Open Access Journals (DOAJ)
+                            </h3>
+                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                Community-curated online directory that indexes high-quality, peer-reviewed open access journals, periodicals, and academic articles covering all scientific domains.
+                            </p>
+                        </div>
+                        <div class="pt-5 mt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-[11px] text-slate-400">Strict Quality Standards</span>
+                            <a href="https://doaj.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200 hover:bg-emerald-100 transition-all">
+                                Open Portal <i class="fas fa-external-link-alt text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 3. CORE -->
+                    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between hover:border-amber-400 group">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-purple-50 text-purple-700 border border-purple-200">
+                                    Repository Aggregator
+                                </span>
+                                <span class="text-xs text-slate-400 font-mono">Full-Text</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-navy-900 group-hover:text-amber-600 transition-colors">
+                                CORE
+                            </h3>
+                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                Aggregates millions of open-access research papers directly harvested from institutional university repositories and academic publishers globally.
+                            </p>
+                        </div>
+                        <div class="pt-5 mt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-[11px] text-slate-400">World's Largest Corpus</span>
+                            <a href="https://core.ac.uk/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200 hover:bg-emerald-100 transition-all">
+                                Open Portal <i class="fas fa-external-link-alt text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 4. PubMed -->
+                    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between hover:border-amber-400 group">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-rose-50 text-rose-700 border border-rose-200">
+                                    Medicine & Health
+                                </span>
+                                <span class="text-xs text-slate-400 font-mono">NIH / NLM</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-navy-900 group-hover:text-amber-600 transition-colors">
+                                PubMed
+                            </h3>
+                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                Authoritative index of over 36 million citations for biomedical and life sciences literature, MEDLINE, and health science publications.
+                            </p>
+                        </div>
+                        <div class="pt-5 mt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-[11px] text-slate-400">Biomedical Gold Standard</span>
+                            <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200 hover:bg-emerald-100 transition-all">
+                                Open Portal <i class="fas fa-external-link-alt text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 5. ERIC -->
+                    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between hover:border-amber-400 group">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-amber-50 text-amber-800 border border-amber-200">
+                                    Education & Pedagogy
+                                </span>
+                                <span class="text-xs text-slate-400 font-mono">IES / US Dept of Ed</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-navy-900 group-hover:text-amber-600 transition-colors">
+                                ERIC (Education Resources Info Center)
+                            </h3>
+                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                Comprehensive database of education research, indexed journal articles, conference papers, curriculum guides, and policy reports.
+                            </p>
+                        </div>
+                        <div class="pt-5 mt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-[11px] text-slate-400">Essential for Educators</span>
+                            <a href="https://eric.ed.gov/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200 hover:bg-emerald-100 transition-all">
+                                Open Portal <i class="fas fa-external-link-alt text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 6. SciELO South Africa -->
+                    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between hover:border-amber-400 group border-l-4 border-l-emerald-600">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-900 border border-emerald-300">
+                                    South African Scholarly Research
+                                </span>
+                                <span class="text-xs text-slate-400 font-mono">National Focus</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-navy-900 group-hover:text-emerald-700 transition-colors">
+                                SciELO South Africa
+                            </h3>
+                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                High-visibility collection of certified open-access South African scholarly publications and journals, managed under the auspices of ASSAf.
+                            </p>
+                        </div>
+                        <div class="pt-5 mt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-[11px] text-slate-400">Local Research Excellence</span>
+                            <a href="https://scielo.org.za/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200 hover:bg-emerald-100 transition-all">
+                                Open Portal <i class="fas fa-external-link-alt text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 7. Open Textbook Library -->
+                    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between hover:border-amber-400 group sm:col-span-2 lg:col-span-3">
+                        <div class="flex flex-col sm:flex-row items-start justify-between gap-4">
+                            <div>
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-teal-50 text-teal-800 border border-teal-200">
+                                        Open Textbooks (OER)
+                                    </span>
+                                    <span class="text-xs text-slate-400 font-mono">University of Minnesota</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-navy-900 group-hover:text-amber-600 transition-colors">
+                                    Open Textbook Library
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-600 mt-2 max-w-4xl leading-relaxed">
+                                    Find openly-licensed academic textbooks that have been funded, published, and reviewed by faculty across higher education to be used, adapted, and distributed without student cost.
+                                </p>
+                            </div>
+                            <a href="https://open.umn.edu/opentextbooks/" target="_blank" rel="noopener noreferrer" class="shrink-0 inline-flex items-center gap-2 text-xs font-bold text-white bg-navy-900 hover:bg-slate-800 px-5 py-2.5 rounded-xl shadow transition-all">
+                                Access Free Textbooks <i class="fas fa-external-link-alt text-[10px] text-amber-400"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Tips for Using Databases Box -->
+                <div class="rounded-2xl bg-amber-50/70 border border-amber-200 p-6 sm:p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-10 rounded-xl bg-amber-500 text-navy-950 flex items-center justify-center font-bold">
+                            <i class="fas fa-lightbulb text-lg"></i>
+                        </span>
+                        <div>
+                            <h3 class="text-lg font-bold font-serif text-navy-900">Tips for Effective Database Research</h3>
+                            <p class="text-xs text-slate-600">Advice from Reference Librarian Kabelo Ramokgopa</p>
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs text-slate-700">
+                        <div class="p-3.5 bg-white rounded-xl border border-amber-200/80">
+                            <div class="font-bold text-navy-900 mb-1 flex items-center gap-2">
+                                <i class="fas fa-key text-amber-600"></i> Target Specific Keywords
+                            </div>
+                            <p>Avoid typing entire essay questions. Use Boolean operators like <code>AND</code>, <code>OR</code>, and quotation marks for exact key terms.</p>
+                        </div>
+                        <div class="p-3.5 bg-white rounded-xl border border-amber-200/80">
+                            <div class="font-bold text-navy-900 mb-1 flex items-center gap-2">
+                                <i class="fas fa-filter text-amber-600"></i> Apply Search Filters
+                            </div>
+                            <p>Refine your query by publication date range (e.g., last 5 years), peer-review certification, language, or geographical scope.</p>
+                        </div>
+                        <div class="p-3.5 bg-white rounded-xl border border-amber-200/80">
+                            <div class="font-bold text-navy-900 mb-1 flex items-center gap-2">
+                                <i class="fas fa-shield-halved text-amber-600"></i> Verify Source Credibility
+                            </div>
+                            <p>Check author affiliations, methodology rigor, peer-review status, and journal standing before citing in assignments.</p>
+                        </div>
+                        <div class="p-3.5 bg-white rounded-xl border border-amber-200/80">
+                            <div class="font-bold text-navy-900 mb-1 flex items-center gap-2">
+                                <i class="fas fa-copyright text-amber-600"></i> Check Open Licensing
+                            </div>
+                            <p>Remember that a search listing in an index does not always mean full-text access is unpaywalled. Look for "Open Access" flags.</p>
+                        </div>
+                        <div class="p-3.5 bg-white rounded-xl border border-amber-200/80">
+                            <div class="font-bold text-navy-900 mb-1 flex items-center gap-2">
+                                <i class="fas fa-quote-right text-amber-600"></i> Accurate Referencing
+                            </div>
+                            <p>Ensure you capture complete metadata (DOIs, authors, publication titles) to build correct bibliographies in Harvard or APA format.</p>
+                        </div>
+                        <div class="p-3.5 bg-white rounded-xl border border-amber-200/80 flex items-center bg-amber-100/50">
+                            <p class="italic text-slate-600">
+                                <i class="fas fa-circle-exclamation text-amber-700 mr-1"></i> Note: These resources are independently operated websites and are not databases owned by the fictional library.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ASK A LIBRARIAN (HELP DESK) -->
+        <section id="ask" class="py-16 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="text-xs font-bold tracking-widest text-emerald-700 uppercase">Research Help Desk</span>
+                    <h2 class="text-3xl font-bold font-serif text-navy-900 mt-1">Ask a Librarian</h2>
+                    <div class="w-16 h-1 bg-amber-500 mx-auto my-3 rounded-full"></div>
+                    <p class="text-slate-600 text-sm">
+                        Do you need help finding a book, accessing an academic database, preparing a research assignment, or referencing scholarly sources? Our librarians are ready to assist.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Left: Reference Desk Contact Card -->
+                    <div class="lg:col-span-5 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+                        <div class="flex items-center gap-4 pb-6 border-b border-slate-100">
+                            <div class="w-14 h-14 rounded-2xl bg-amber-500 text-navy-950 font-serif font-bold text-xl flex items-center justify-center shadow-md">
+                                KR
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Official Reference Desk</span>
+                                <h3 class="text-xl font-bold text-navy-900">Kabelo Ramokgopa</h3>
+                                <p class="text-xs text-slate-500">Reference Librarian & Research Advisor</p>
+                            </div>
+                        </div>
+
+                        <!-- Direct contact channels -->
+                        <div class="py-6 space-y-4 text-xs">
+                            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                                <div class="w-9 h-9 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-sm">
+                                    <i class="far fa-envelope"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-slate-500 text-[11px]">Email Inquiries</div>
+                                    <div class="font-semibold text-slate-800 font-mono">librarian@example.com</div>
+                                </div>
+                                <button onclick="copyToClipboard('librarian@example.com', 'Email copied!')" class="text-xs px-2.5 py-1 rounded bg-white border border-slate-200 hover:bg-slate-100 text-slate-600">
+                                    Copy
+                                </button>
+                            </div>
+
+                            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                                <div class="w-9 h-9 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-sm">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-slate-500 text-[11px]">Telephone / Voice Call</div>
+                                    <div class="font-semibold text-slate-800 font-mono">+27 00 000 0000</div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                                <div class="w-9 h-9 rounded-lg bg-green-100 text-green-700 flex items-center justify-center text-sm">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-slate-500 text-[11px]">WhatsApp Help Line</div>
+                                    <div class="font-semibold text-slate-800 font-mono">+27 00 000 0000</div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                                <div class="w-9 h-9 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center text-sm">
+                                    <i class="far fa-clock"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-slate-500 text-[11px]">Consultation Office Hours</div>
+                                    <div class="font-semibold text-slate-800">Monday–Friday, 08:00–17:00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Scope of Assistance List -->
+                        <div class="pt-4 border-t border-slate-100">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-navy-900 mb-2">How We Can Help You:</h4>
+                            <ul class="text-xs text-slate-600 space-y-1.5">
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-600 text-[10px]"></i> Finding books and peer-reviewed journal articles</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-600 text-[10px]"></i> Identifying suitable research databases</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-600 text-[10px]"></i> Using the library catalogue efficiently</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-600 text-[10px]"></i> Understanding Harvard, APA & Chicago referencing styles</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-600 text-[10px]"></i> Accessing electronic resources remotely</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-600 text-[10px]"></i> Developing advanced information search skills</li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-4 p-3 bg-slate-100/80 rounded-xl text-[11px] text-slate-500">
+                            <i class="fas fa-shield-alt mr-1"></i> The contact details above are placeholders. Replace them with authorized institution details if used for a production facility.
+                        </div>
+                    </div>
+
+                    <!-- Right: Interactive Inquiry Form -->
+                    <div class="lg:col-span-7 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+                        <div class="mb-6">
+                            <h3 class="text-xl font-bold font-serif text-navy-900">Send an Inquiry to the Reference Desk</h3>
+                            <p class="text-xs text-slate-500 mt-1">Please include your name, contact information, and specific details about the academic assistance required.</p>
+                        </div>
+
+                        <form id="askLibrarianForm" onsubmit="handleLibrarianSubmit(event)" class="space-y-4">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1" for="askName">Your Full Name <span class="text-rose-500">*</span></label>
+                                    <input type="text" id="askName" required placeholder="e.g. Lerato Khumalo" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1" for="askEmail">Your Email Address <span class="text-rose-500">*</span></label>
+                                    <input type="email" id="askEmail" required placeholder="e.g. lerato@student.ac.za" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1" for="askRole">User Category <span class="text-rose-500">*</span></label>
+                                    <select id="askRole" required class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                                        <option value="" disabled selected>Select category</option>
+                                        <option value="Student">Student (Undergraduate / Postgraduate)</option>
+                                        <option value="Lecturer">Lecturer / Faculty</option>
+                                        <option value="Researcher">Academic Researcher</option>
+                                        <option value="Community">Community Member / Other</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1" for="askType">Type of Assistance Needed <span class="text-rose-500">*</span></label>
+                                    <select id="askType" required class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                                        <option value="" disabled selected>Select assistance topic</option>
+                                        <option value="Finding books and journals">Finding books & journal articles</option>
+                                        <option value="Database assistance">Identifying suitable research databases</option>
+                                        <option value="Catalogue navigation">Using the library catalogue (OPAC)</option>
+                                        <option value="Referencing styles">Understanding referencing styles (APA/Harvard)</option>
+                                        <option value="Electronic access">Accessing electronic resources & off-campus</option>
+                                        <option value="Search skills">Developing information search skills</option>
+                                        <option value="General Inquiry">General library inquiry</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1" for="askSubject">Research Topic / Inquiry Subject <span class="text-rose-500">*</span></label>
+                                <input type="text" id="askSubject" required placeholder="e.g. Requesting papers on rural healthcare delivery in Limpopo" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1" for="askMessage">Detailed Question & Specific Needs <span class="text-rose-500">*</span></label>
+                                <textarea id="askMessage" required rows="4" placeholder="Describe the information you are trying to find, your assignment topic, keywords you've already tried, or specific database issues you encountered..." class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
+                            </div>
+
+                            <div class="pt-2 flex items-center justify-between">
+                                <span class="text-[11px] text-slate-500">
+                                    <i class="far fa-clock mr-1"></i> Responses typically delivered within 24 business hours.
+                                </span>
+                                <button type="submit" id="askSubmitBtn" class="px-6 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold transition-all shadow-md inline-flex items-center gap-2">
+                                    <span>Submit Inquiry</span>
+                                    <i class="fas fa-paper-plane text-xs"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- LIBRARY USER SATISFACTION SURVEY (10 QUESTIONS) -->
+        <section id="survey" class="py-16 bg-white border-b border-slate-200">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-12">
+                    <span class="text-xs font-bold tracking-widest text-emerald-700 uppercase">Quality Assurance & User Feedback</span>
+                    <h2 class="text-3xl font-bold font-serif text-navy-900 mt-1">Library User Satisfaction Survey</h2>
+                    <div class="w-16 h-1 bg-amber-500 mx-auto my-3 rounded-full"></div>
+                    <p class="text-slate-600 text-sm max-w-2xl mx-auto">
+                        We value your feedback. This survey helps us understand user experiences, enhance our print & digital collections, and improve library facilities for the entire academic community.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-md">
+                    <form id="satisfactionSurveyForm" onsubmit="handleSurveySubmit(event)" class="space-y-8">
+                        
+                        <!-- Question 1 -->
+                        <div class="p-4 bg-white rounded-xl border border-slate-200">
+                            <label class="block text-sm font-bold text-navy-900 mb-3">
+                                1. Which category best describes you? <span class="text-rose-500">*</span>
+                            </label>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q1_category" value="Student" required class="text-emerald-600 focus:ring-emerald-500">
+                                    <span>Student</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q1_category" value="Lecturer" class="text-emerald-600 focus:ring-emerald-500">
+                                    <span>Lecturer</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q1_category" value="Researcher" class="text-emerald-600 focus:ring-emerald-500">
+                                    <span>Researcher</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q1_category" value="Other" class="text-emerald-600 focus:ring-emerald-500">
+                                    <span>Other</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="p-4 bg-white rounded-xl border border-slate-200">
+                            <label class="block text-sm font-bold text-navy-900 mb-3">
+                                2. How often do you use the library? <span class="text-rose-500">*</span>
+                            </label>
+                            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 text-xs">
+                                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q2_frequency" value="Daily" required class="text-emerald-600">
+                                    <span>Daily</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q2_frequency" value="Weekly" class="text-emerald-600">
+                                    <span>Weekly</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q2_frequency" value="Monthly" class="text-emerald-600">
+                                    <span>Monthly</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q2_frequency" value="Rarely" class="text-emerald-600">
+                                    <span>Rarely</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer col-span-2 sm:col-span-1">
+                                    <input type="radio" name="q2_frequency" value="Never" class="text-emerald-600">
+                                    <span>Never</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="p-4 bg-white rounded-xl border border-slate-200">
+                            <label class="block text-sm font-bold text-navy-900 mb-3">
+                                3. How satisfied are you with the availability of books and other resources? <span class="text-rose-500">*</span>
+                            </label>
+                            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs">
+                                <label class="flex items-center gap-1.5 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q3_resources" value="Very satisfied" required class="text-emerald-600">
+                                    <span>Very satisfied</span>
+                                </label>
+                                <label class="flex items-center gap-1.5 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q3_resources" value="Satisfied" class="text-emerald-600">
+                                    <span>Satisfied</span>
+                                </label>
+                                <label class="flex items-center gap-1.5 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q3_resources" value="Neutral" class="text-emerald-600">
+                                    <span>Neutral</span>
+                                </label>
+                                <label class="flex items-center gap-1.5 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q3_resources" value="Dissatisfied" class="text-emerald-600">
+                                    <span>Dissatisfied</span>
+                                </label>
+                                <label class="flex items-center gap-1.5 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer col-span-2 sm:col-span-1">
+                                    <input type="radio" name="q3_resources" value="Very dissatisfied" class="text-emerald-600">
+                                    <span>Very dissatisfied</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Question 4 -->
+                        <div class="p-4 bg-white rounded-xl border border-slate-200">
+                            <label class="block text-sm font-bold text-navy-900 mb-3">
+                                4. How would you rate the helpfulness of library staff? <span class="text-rose-500">*</span>
+                            </label>
+                            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs">
+                                <label class="flex items-center gap-1.5 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q4_staff" value="Excellent" required class="text-emerald-600">
+                                    <span>Excellent</span>
+                                </label>
+                                <label class="flex items-center gap-1.5 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q4_staff" value="Good" class="text-emerald-600">
+                                    <span>Good</span>
+                                </label>
+                                <label class="flex items-center gap-1.5 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q4_staff" value="Average" class="text-emerald-600">
+                                    <span>Average</span>
+                                </label>
+                                <label class="flex items-center gap-1.5 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q4_staff" value="Poor" class="text-emerald-600">
+                                    <span>Poor</span>
+                                </label>
+                                <label class="flex items-center gap-1.5 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer col-span-2 sm:col-span-1">
+                                    <input type="radio" name="q4_staff" value="Very poor" class="text-emerald-600">
+                                    <span>Very poor</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Question 5 -->
+                        <div class="p-4 bg-white rounded-xl border border-slate-200">
+                            <label class="block text-sm font-bold text-navy-900 mb-3">
+                                5. How satisfied are you with the library's operating hours? <span class="text-rose-500">*</span>
+                            </label>
+                            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs">
+                                <label class="flex items-center gap-1.5 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q5_hours" value="Very satisfied" required class="text-emerald-600">
+                                    <span>Very satisfied</span>
+                                </label>
+                                <label class="flex items-center gap-1.5 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q5_hours" value="Satisfied" class="text-emerald-600">
+                                    <span>Satisfied</span>
+                                </label>
+                                <label class="flex items-center gap-1.5 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q5_hours" value="Neutral" class="text-emerald-600">
+                                    <span>Neutral</span>
+                                </label>
+                                <label class="flex items-center gap-1.5 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q5_hours" value="Dissatisfied" class="text-emerald-600">
+                                    <span>Dissatisfied</span>
+                                </label>
+                                <label class="flex items-center gap-1.5 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer col-span-2 sm:col-span-1">
+                                    <input type="radio" name="q5_hours" value="Very dissatisfied" class="text-emerald-600">
+                                    <span>Very dissatisfied</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Question 6 -->
+                        <div class="p-4 bg-white rounded-xl border border-slate-200">
+                            <label class="block text-sm font-bold text-navy-900 mb-3">
+                                6. Have you used the library's electronic resources? <span class="text-rose-500">*</span>
+                            </label>
+                            <div class="flex gap-6 text-xs">
+                                <label class="flex items-center gap-2 p-2.5 px-6 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q6_eresources" value="Yes" required class="text-emerald-600">
+                                    <span class="font-semibold text-slate-800">Yes</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 px-6 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q6_eresources" value="No" class="text-emerald-600">
+                                    <span class="font-semibold text-slate-800">No</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Question 7 -->
+                        <div class="p-4 bg-white rounded-xl border border-slate-200">
+                            <label class="block text-sm font-bold text-navy-900 mb-3">
+                                7. How easy is it to find the information you need? <span class="text-rose-500">*</span>
+                            </label>
+                            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs">
+                                <label class="flex items-center gap-1.5 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q7_ease" value="Very easy" required class="text-emerald-600">
+                                    <span>Very easy</span>
+                                </label>
+                                <label class="flex items-center gap-1.5 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q7_ease" value="Easy" class="text-emerald-600">
+                                    <span>Easy</span>
+                                </label>
+                                <label class="flex items-center gap-1.5 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q7_ease" value="Neutral" class="text-emerald-600">
+                                    <span>Neutral</span>
+                                </label>
+                                <label class="flex items-center gap-1.5 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q7_ease" value="Difficult" class="text-emerald-600">
+                                    <span>Difficult</span>
+                                </label>
+                                <label class="flex items-center gap-1.5 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer col-span-2 sm:col-span-1">
+                                    <input type="radio" name="q7_ease" value="Very difficult" class="text-emerald-600">
+                                    <span>Very difficult</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Question 8 -->
+                        <div class="p-4 bg-white rounded-xl border border-slate-200">
+                            <label class="block text-sm font-bold text-navy-900 mb-2">
+                                8. What challenges have you experienced when using the library? (Select all that apply)
+                            </label>
+                            <div class="grid sm:grid-cols-2 gap-2.5 text-xs pt-1">
+                                <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="checkbox" name="q8_challenges" value="Limited books" class="rounded text-emerald-600 focus:ring-emerald-500">
+                                    <span>Limited books</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="checkbox" name="q8_challenges" value="Slow internet" class="rounded text-emerald-600 focus:ring-emerald-500">
+                                    <span>Slow internet</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="checkbox" name="q8_challenges" value="Difficulty finding information" class="rounded text-emerald-600 focus:ring-emerald-500">
+                                    <span>Difficulty finding information</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="checkbox" name="q8_challenges" value="Limited study space" class="rounded text-emerald-600 focus:ring-emerald-500">
+                                    <span>Limited study space</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer sm:col-span-2">
+                                    <input type="checkbox" name="q8_challenges" value="Other" class="rounded text-emerald-600 focus:ring-emerald-500">
+                                    <span>Other challenges</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Question 9 -->
+                        <div class="p-4 bg-white rounded-xl border border-slate-200">
+                            <label class="block text-sm font-bold text-navy-900 mb-1" for="q9_improvements">
+                                9. What improvements would you recommend? <span class="text-rose-500">*</span>
+                            </label>
+                            <p class="text-xs text-slate-500 mb-2">Long-answer response: share any specific suggestions, collection requests, or facility enhancements.</p>
+                            <textarea id="q9_improvements" required rows="3" placeholder="e.g. Additional group study pods, more copies of required first-year engineering and law texts, extended Saturday hours..." class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
+                        </div>
+
+                        <!-- Question 10 -->
+                        <div class="p-4 bg-white rounded-xl border border-slate-200">
+                            <label class="block text-sm font-bold text-navy-900 mb-3">
+                                10. Would you recommend the library to other students? <span class="text-rose-500">*</span>
+                            </label>
+                            <div class="flex flex-wrap gap-4 text-xs">
+                                <label class="flex items-center gap-2 p-2.5 px-6 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q10_recommend" value="Yes" required class="text-emerald-600">
+                                    <span class="font-semibold text-slate-800">Yes</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 px-6 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q10_recommend" value="No" class="text-emerald-600">
+                                    <span class="font-semibold text-slate-800">No</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 px-6 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                    <input type="radio" name="q10_recommend" value="Maybe" class="text-emerald-600">
+                                    <span class="font-semibold text-slate-800">Maybe</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <span class="text-xs text-slate-500">Thank you for participating. Your feedback directly shapes our services.</span>
+                            <button type="submit" id="surveySubmitBtn" class="w-full sm:w-auto px-8 py-3 bg-amber-500 hover:bg-amber-400 text-navy-950 rounded-xl font-bold text-sm shadow-md transition-all">
+                                Submit Feedback Survey <i class="fas fa-check-double ml-1"></i>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- RULES AND REGULATIONS -->
+        <section id="rules" class="py-16 bg-slate-100/60 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs font-bold tracking-widest text-emerald-700 uppercase">Policy & Governance</span>
+                    <h2 class="text-3xl font-bold font-serif text-navy-900 mt-1">Library Rules and Regulations</h2>
+                    <div class="w-16 h-1 bg-amber-500 mx-auto my-3 rounded-full"></div>
+                    <p class="text-slate-600 text-sm">
+                        To maintain a welcoming, safe, and productive learning environment for all scholars, users are expected to strictly observe the following library regulations.
+                    </p>
+                </div>
+
+                <!-- Categorized Interactive Tabs -->
+                <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+                    <!-- Tab buttons -->
+                    <div class="flex flex-wrap gap-2 pb-6 border-b border-slate-200 text-xs font-semibold">
+                        <button onclick="switchRuleTab('general')" id="tab-btn-general" class="rule-tab-btn px-4 py-2.5 rounded-xl bg-navy-900 text-amber-400 transition-all">
+                            <i class="fas fa-users-rays mr-1.5"></i> General Conduct
+                        </button>
+                        <button onclick="switchRuleTab('circulation')" id="tab-btn-circulation" class="rule-tab-btn px-4 py-2.5 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">
+                            <i class="fas fa-book mr-1.5"></i> Borrowing & Returning
+                        </button>
+                        <button onclick="switchRuleTab('tech')" id="tab-btn-tech" class="rule-tab-btn px-4 py-2.5 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">
+                            <i class="fas fa-desktop mr-1.5"></i> Use of Technology
+                        </button>
+                        <button onclick="switchRuleTab('environment')" id="tab-btn-environment" class="rule-tab-btn px-4 py-2.5 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">
+                            <i class="fas fa-volume-xmark mr-1.5"></i> Study Environment
+                        </button>
+                        <button onclick="switchRuleTab('safety')" id="tab-btn-safety" class="rule-tab-btn px-4 py-2.5 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">
+                            <i class="fas fa-shield-halved mr-1.5"></i> Privacy and Safety
+                        </button>
+                    </div>
+
+                    <!-- Tab Contents -->
+                    <div class="pt-6">
+                        
+                        <!-- 1. General Conduct -->
+                        <div id="rule-content-general" class="rule-tab-content space-y-4">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs">1–5</span>
+                                <h3 class="text-lg font-bold font-serif text-navy-900">General Patron Conduct</h3>
+                            </div>
+                            <div class="grid sm:grid-cols-2 gap-4 text-xs text-slate-700">
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <span class="font-bold text-navy-900 block mb-1">1. Noise Control</span>
+                                    Maintain silence or speak quietly in designated communal zones. Strict silence is mandatory in quiet study wings.
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <span class="font-bold text-navy-900 block mb-1">2. Mutual Respect</span>
+                                    Respect library staff and fellow patrons at all times. Harassment, verbal hostility, or disruption will not be tolerated.
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <span class="font-bold text-navy-900 block mb-1">3. Cleanliness</span>
+                                    Keep the library clean. Dispose of all waste, papers, and rubbish in the designated recycling bins.
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <span class="font-bold text-navy-900 block mb-1">4. Property Care</span>
+                                    Do not deface, highlight, dog-ear, or damage books, furniture, desktop terminals, or library fixtures.
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 sm:col-span-2">
+                                    <span class="font-bold text-navy-900 block mb-1">5. Staff Directives</span>
+                                    Follow all instructions provided by library staff, security personnel, and posted official advisory notices.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Borrowing and Returning Books -->
+                        <div id="rule-content-circulation" class="rule-tab-content hidden space-y-4">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-xs">6–10</span>
+                                <h3 class="text-lg font-bold font-serif text-navy-900">Borrowing & Circulation Regulations</h3>
+                            </div>
+                            <div class="grid sm:grid-cols-2 gap-4 text-xs text-slate-700">
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <span class="font-bold text-navy-900 block mb-1">6. Valid Membership Card</span>
+                                    Present a valid student or staff library membership card when borrowing materials. Cards are strictly non-transferable.
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <span class="font-bold text-navy-900 block mb-1">7. Timely Returns</span>
+                                    Return borrowed materials on or before the specified due date to prevent overdue fines and account blocks.
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <span class="font-bold text-navy-900 block mb-1">8. Renewal Procedures</span>
+                                    Renew books prior to the due date via the online portal or circulation desk, provided no recall holds exist on the item.
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <span class="font-bold text-navy-900 block mb-1">9. Lost or Damaged Materials</span>
+                                    Promptly report lost, mislaid, or water-damaged materials to circulation staff for immediate replacement invoicing.
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 sm:col-span-2">
+                                    <span class="font-bold text-navy-900 block mb-1">10. Account Security</span>
+                                    Do not lend your library card or digital account credentials to another student or external individual.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Use of Technology -->
+                        <div id="rule-content-tech" class="rule-tab-content hidden space-y-4">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center font-bold text-xs">11–14</span>
+                                <h3 class="text-lg font-bold font-serif text-navy-900">Technology & Computing Rules</h3>
+                            </div>
+                            <div class="grid sm:grid-cols-2 gap-4 text-xs text-slate-700">
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <span class="font-bold text-navy-900 block mb-1">11. Responsible IT Usage</span>
+                                    Use library workstations, Wi-Fi networks, and public printers exclusively for academic, research, and educational purposes.
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <span class="font-bold text-navy-900 block mb-1">12. Prohibited Content</span>
+                                    Do not access, stream, download, or distribute illegal, sexually explicit, harmful, or inappropriate content on library devices.
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <span class="font-bold text-navy-900 block mb-1">13. Copyright & IP Rights</span>
+                                    Strictly adhere to intellectual property laws. Do not systematically scrape or reproduce entire commercial copyright textbooks.
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <span class="font-bold text-navy-900 block mb-1">14. System Configurations</span>
+                                    Do not install unauthorized software, alter system proxy settings, or unplug computer hardware cables.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Study Environment -->
+                        <div id="rule-content-environment" class="rule-tab-content hidden space-y-4">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-xs">15–18</span>
+                                <h3 class="text-lg font-bold font-serif text-navy-900">Study Space Etiquette</h3>
+                            </div>
+                            <div class="grid sm:grid-cols-2 gap-4 text-xs text-slate-700">
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <span class="font-bold text-navy-900 block mb-1">15. Mobile Phones</span>
+                                    Keep cellular phones on complete silent mode. All phone calls must be taken outside library entrance halls.
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <span class="font-bold text-navy-900 block mb-1">16. Seat Reservation</span>
+                                    Do not reserve study desks with books or personal items for long periods. Unattended belongings after 30 minutes may be cleared.
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <span class="font-bold text-navy-900 block mb-1">17. Food & Beverages</span>
+                                    Only spill-proof water bottles are permitted in general study areas. Eating and open beverages are strictly restricted to the outdoor cafeteria.
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <span class="font-bold text-navy-900 block mb-1">18. Personal Belongings</span>
+                                    Keep laptops, wallets, and bags secure at all times. The library accepts no liability for items left unattended.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. Privacy and Safety -->
+                        <div id="rule-content-safety" class="rule-tab-content hidden space-y-4">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="w-8 h-8 rounded-lg bg-rose-100 text-rose-800 flex items-center justify-center font-bold text-xs">19–20</span>
+                                <h3 class="text-lg font-bold font-serif text-navy-900">Privacy, Security & Compliance</h3>
+                            </div>
+                            <div class="grid sm:grid-cols-2 gap-4 text-xs text-slate-700">
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <span class="font-bold text-navy-900 block mb-1">19. Respect User Privacy</span>
+                                    Respect the confidentiality and privacy of other scholars. Do not record patrons or photograph screens without explicit consent.
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <span class="font-bold text-navy-900 block mb-1">20. Incident Reporting</span>
+                                    Immediately report any suspicious activity, unattended packages, safety hazards, or damaged electrical equipment to staff or security.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Enforcement Warning Footnote -->
+                    <div class="mt-8 p-4 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-900 flex items-start gap-3">
+                        <i class="fas fa-triangle-exclamation text-rose-600 mt-0.5 text-base"></i>
+                        <div>
+                            <strong>Enforcement Policy:</strong> Failure to follow library rules may result in formal warnings, fines, or restricted access to library facilities and electronic systems in accordance with institutional disciplinary codes.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 text-slate-400 text-xs border-t border-slate-800 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-12 border-b border-slate-800">
+                
+                <!-- Col 1: Brand & Vision -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-amber-500 text-navy-950 flex items-center justify-center font-bold">
+                            <i class="fas fa-book-open-reader text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="text-sm font-bold text-white font-heading block">Limpopo Knowledge Hub</span>
+                            <span class="text-[10px] uppercase text-emerald-400 font-semibold tracking-wider">Academic Library</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed text-xs">
+                        Empowering students, lecturers, and researchers through open scholarly access, modern study facilities, and comprehensive information literacy.
+                    </p>
+                    <div class="text-[11px] text-amber-400/80 font-mono">
+                        "Fostering Lifelong Discovery & Innovation"
+                    </div>
+                </div>
+
+                <!-- Col 2: Operating Hours -->
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-white mb-4 flex items-center gap-2">
+                        <i class="far fa-clock text-amber-500"></i> Operating Hours
+                    </h3>
+                    <ul class="space-y-2.5 text-xs text-slate-300">
+                        <li class="flex justify-between border-b border-slate-800/80 pb-1.5">
+                            <span>Monday – Friday:</span>
+                            <span class="font-mono text-emerald-400">08:00 – 17:00</span>
+                        </li>
+                        <li class="flex justify-between border-b border-slate-800/80 pb-1.5">
+                            <span>Saturday:</span>
+                            <span class="font-mono text-emerald-400">09:00 – 13:00</span>
+                        </li>
+                        <li class="flex justify-between pb-1 text-slate-500">
+                            <span>Sunday & Holidays:</span>
+                            <span class="text-rose-400 font-semibold">Closed</span>
+                        </li>
+                    </ul>
+                    <p class="text-[10px] text-slate-500 mt-3 italic">
+                        Digital library catalogue and electronic databases remain accessible online 24/7.
+                    </p>
+                </div>
+
+                <!-- Col 3: Key Links -->
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Quick Navigation</h3>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#about" class="hover:text-amber-400 transition-colors">About & Core Values</a></li>
+                        <li><a href="#about" class="hover:text-amber-400 transition-colors">Professional Staff Directory</a></li>
+                        <li><a href="#services" class="hover:text-amber-400 transition-colors">Catalogue Search (OPAC)</a></li>
+                        <li><a href="#databases" class="hover:text-amber-400 transition-colors">Free Open Access Databases</a></li>
+                        <li><a href="#ask" class="hover:text-amber-400 transition-colors">Ask a Librarian (Reference Desk)</a></li>
+                        <li><a href="#survey" class="hover:text-amber-400 transition-colors">User Satisfaction Survey</a></li>
+                        <li><a href="#rules" class="hover:text-amber-400 transition-colors">Rules & Regulations</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Reference Contact Details -->
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-white mb-4 flex items-center gap-2">
+                        <i class="fas fa-headset text-amber-500"></i> Reference Desk
+                    </h3>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <p><strong class="text-white">Librarian:</strong> Kabelo Ramokgopa</p>
+                        <p><strong class="text-white">Email:</strong> <span class="font-mono text-amber-300">librarian@example.com</span></p>
+                        <p><strong class="text-white">Telephone:</strong> <span class="font-mono">+27 00 000 0000</span></p>
+                        <p><strong class="text-white">WhatsApp:</strong> <span class="font-mono text-emerald-400">+27 00 000 0000</span></p>
+                        <p class="text-[11px] text-slate-500 pt-1">
+                            Limpopo Knowledge Hub, South Africa.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Disclaimer & Copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+                <p>© 2026 Limpopo Knowledge Hub Library. All rights reserved.</p>
+                <p class="italic text-center sm:text-right">
+                    Fictional academic library prototype created for education & resource demonstration.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL: Confirmation for Feedback Survey Submission -->
+    <div id="surveyModal" class="fixed inset-0 z-50 bg-navy-950/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl border border-slate-200 text-center animate-fade-in">
+            <div class="w-16 h-16 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto mb-4">
+                <i class="fas fa-circle-check"></i>
+            </div>
+            <h3 class="text-xl font-bold font-serif text-navy-900 mb-2">Thank You for Your Feedback!</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                Your responses have been successfully recorded. Your input directly guides collection development, digital service upgrades, and library study facilities.
+            </p>
+            <div class="p-3 bg-slate-50 rounded-xl text-xs text-slate-500 mb-6 font-mono">
+                Submission ID: #LKH-<span id="submissionId">2026-098</span>
+            </div>
+            <button onclick="closeSurveyModal()" class="w-full py-3 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold transition-all">
+                Close Window
+            </button>
+        </div>
+    </div>
+
+    <!-- MODAL: Mock Report Viewer -->
+    <div id="reportModal" class="fixed inset-0 z-50 bg-navy-950/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl border border-slate-200 text-left animate-fade-in">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+                <div class="flex items-center gap-3">
+                    <span class="w-10 h-10 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center text-lg">
+                        <i class="fas fa-file-invoice"></i>
+                    </span>
+                    <div>
+                        <h3 class="text-base font-bold text-navy-900">Annual Operational Review Summary</h3>
+                        <p class="text-[11px] text-slate-500">Limpopo Knowledge Hub Library</p>
+                    </div>
+                </div>
+                <button onclick="closeReportModal()" class="text-slate-400 hover:text-slate-600 p-1">
+                    <i class="fas fa-times text-lg"></i>
+                </button>
+            </div>
+
+            <div class="py-4 space-y-3 text-xs text-slate-600 leading-relaxed max-h-96 overflow-y-auto">
+                <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+                    <strong class="text-navy-900">Collection Development:</strong> Over 14,200 physical titles catalogued; active integration with DOAJ, PubMed, CORE, and SciELO South Africa for open research.
+                </div>
+                <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+                    <strong class="text-navy-900">User Footfall:</strong> An estimated 640 daily student visits across quiet study carrels, PC laboratories, and collaborative workspaces.
+                </div>
+                <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+                    <strong class="text-navy-900">Digital Literacy Training:</strong> Conducted 24 information literacy workshops supporting APA/Harvard referencing, catalog search, and research integrity.
+                </div>
+                <div class="p-3 rounded-lg bg-amber-50 border border-amber-200 text-amber-900">
+                    <i class="fas fa-info-circle mr-1"></i> Note: As this is a mock library, no official auditable operational statistics exist. This document illustrates planned reporting sections.
+                </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-200 flex justify-end gap-2">
+                <button onclick="closeReportModal()" class="px-4 py-2 bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold hover:bg-slate-300">
+                    Close Preview
+                </button>
+                <button onclick="copyToClipboard('Annual Report Summary: Limpopo Knowledge Hub Library Prototype', 'Report text copied to clipboard!')" class="px-4 py-2 bg-emerald-700 text-white rounded-lg text-xs font-semibold hover:bg-emerald-800">
+                    <i class="far fa-copy mr-1"></i> Copy Summary
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toastNotification" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-navy-900 text-white px-5 py-3 rounded-xl shadow-2xl border border-slate-700 flex items-center gap-3">
+            <span id="toastIcon" class="text-emerald-400 text-lg"><i class="fas fa-circle-check"></i></span>
+            <div>
+                <div id="toastTitle" class="text-xs font-bold">Success</div>
+                <div id="toastMessage" class="text-[11px] text-slate-300">Action performed successfully.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT APPLICATION LOGIC -->
+    <script>
+        // Sample Catalogue Data
+        const catalogueItems = [
+            {
+                title: "Research Methodology: Methods and Techniques",
+                author: "C.R. Kothari & Gaurav Garg",
+                type: "books",
+                category: "Book (Print)",
+                isbn: "978-9386649225",
+                shelf: "Shelf 001.42 KOT",
+                available: true,
+                badgeColor: "bg-blue-100 text-blue-800"
+            },
+            {
+                title: "South African Journal of Science",
+                author: "Academy of Science of South Africa (ASSAf)",
+                type: "journals",
+                category: "Journal (Periodical)",
+                isbn: "ISSN 1996-7489",
+                shelf: "Periodicals Rack B4",
+                available: true,
+                badgeColor: "bg-emerald-100 text-emerald-800"
+            },
+            {
+                title: "Open Education Resources: Curricula Innovations",
+                author: "Dr. Palesa Matlala",
+                type: "eresources",
+                category: "e-Resource (PDF/Online)",
+                isbn: "Digital Repository e-ID: 8042",
+                shelf: "Online Access / LKH Repository",
+                available: true,
+                badgeColor: "bg-purple-100 text-purple-800"
+            },
+            {
+                title: "Academic Writing and Referencing: Harvard & APA Guide",
+                author: "Limpopo Academic Press",
+                type: "books",
+                category: "Book (Print)",
+                isbn: "978-0620894120",
+                shelf: "Reserve Collection 808.02 LKP",
+                available: true,
+                badgeColor: "bg-blue-100 text-blue-800"
+            },
+            {
+                title: "African Health Sciences & Medical Journal",
+                author: "Makerere Medical School & Pan-African Repositories",
+                type: "journals",
+                category: "Journal (Periodical)",
+                isbn: "ISSN 1729-0503",
+                shelf: "Biomedical Section M-12",
+                available: false,
+                badgeColor: "bg-emerald-100 text-emerald-800"
+            },
+            {
+                title: "Principles of South African Constitutional Law",
+                author: "Adv. K. Ramokgopa & Panel",
+                type: "books",
+                category: "Book (Print)",
+                isbn: "978-1485129983",
+                shelf: "Law Section 342.68 RAM",
+                available: true,
+                badgeColor: "bg-blue-100 text-blue-800"
+            },
+            {
+                title: "Digital Information Literacy & Data Ethics",
+                author: "UNESCO Higher Education Series",
+                type: "eresources",
+                category: "e-Resource (PDF/Online)",
+                isbn: "Open Textbook ID: 4192",
+                shelf: "e-Library Portal",
+                available: true,
+                badgeColor: "bg-purple-100 text-purple-800"
+            }
+        ];
+
+        let currentCatalogueFilter = 'all';
+
+        // Render catalogue cards
+        function renderCatalogue(filter = 'all', searchQuery = '') {
+            const container = document.getElementById('catalogueResults');
+            const countLabel = document.getElementById('resultsCount');
+            if (!container) return;
+
+            const normalizedQuery = searchQuery.trim().toLowerCase();
+
+            const filtered = catalogueItems.filter(item => {
+                const matchesFilter = (filter === 'all') || (item.type === filter);
+                const matchesSearch = normalizedQuery === '' || 
+                    item.title.toLowerCase().includes(normalizedQuery) ||
+                    item.author.toLowerCase().includes(normalizedQuery) ||
+                    item.isbn.toLowerCase().includes(normalizedQuery) ||
+                    item.shelf.toLowerCase().includes(normalizedQuery);
+                return matchesFilter && matchesSearch;
+            });
+
+            countLabel.textContent = `Showing ${filtered.length} matching item${filtered.length === 1 ? '' : 's'}`;
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full py-8 text-center bg-slate-800/40 rounded-xl border border-slate-700/60">
+                        <i class="fas fa-book-bookmark text-slate-500 text-3xl mb-2"></i>
+                        <p class="text-sm text-slate-300 font-medium">No catalogued items matched your query.</p>
+                        <p class="text-xs text-slate-400 mt-1">Try searching broader keywords or ask our Reference Desk for assistance.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = filtered.map(item => `
+                <div class="bg-slate-800/90 rounded-xl p-4 border border-slate-700 hover:border-amber-500/50 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-2">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${item.badgeColor}">
+                                ${item.category}
+                            </span>
+                            <span class="text-[10px] ${item.available ? 'text-emerald-400 font-semibold' : 'text-rose-400 font-semibold'} flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full ${item.available ? 'bg-emerald-400' : 'bg-rose-400'}"></span>
+                                ${item.available ? 'Available' : 'Checked Out'}
+                            </span>
+                        </div>
+                        <h4 class="font-bold text-white text-sm line-clamp-2 leading-snug">${item.title}</h4>
+                        <p class="text-xs text-slate-400 mt-1"><i class="far fa-user text-slate-500 mr-1"></i> ${item.author}</p>
+                    </div>
+
+                    <div class="mt-4 pt-3 border-t border-slate-700/80 flex items-center justify-between text-[11px]">
+                        <span class="text-slate-300 font-mono"><i class="fas fa-location-dot text-amber-400 mr-1"></i> ${item.shelf}</span>
+                        <button onclick="showToast('Hold Request Placed', 'Reference desk notified for item: ${item.title.replace(/'/g, "\\'")}', 'success')" class="text-amber-400 hover:text-amber-300 font-medium underline">
+                            Reserve
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function setCatalogueFilter(filterType) {
+            currentCatalogueFilter = filterType;
+            // update button active classes
+            document.querySelectorAll('.cat-filter-btn').forEach(btn => {
+                btn.classList.remove('bg-amber-500', 'text-navy-950', 'font-bold');
+                btn.classList.add('bg-slate-800', 'text-slate-300');
+            });
+            const activeBtn = document.getElementById(`filter-${filterType}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-slate-800', 'text-slate-300');
+                activeBtn.classList.add('bg-amber-500', 'text-navy-950', 'font-bold');
+            }
+
+            const searchInput = document.getElementById('catalogueSearchInput');
+            renderCatalogue(currentCatalogueFilter, searchInput ? searchInput.value : '');
+        }
+
+        function filterCatalogueItems() {
+            const searchInput = document.getElementById('catalogueSearchInput');
+            renderCatalogue(currentCatalogueFilter, searchInput ? searchInput.value : '');
+        }
+
+        function clearCatalogueSearch() {
+            const searchInput = document.getElementById('catalogueSearchInput');
+            if (searchInput) searchInput.value = '';
+            renderCatalogue(currentCatalogueFilter, '');
+        }
+
+        // Rules Section Tab Switcher
+        function switchRuleTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.rule-tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            // Reset tab button states
+            document.querySelectorAll('.rule-tab-btn').forEach(btn => {
+                btn.classList.remove('bg-navy-900', 'text-amber-400');
+                btn.classList.add('bg-slate-100', 'text-slate-700');
+            });
+
+            // Activate chosen tab
+            const targetContent = document.getElementById(`rule-content-${tabName}`);
+            const targetBtn = document.getElementById(`tab-btn-${tabName}`);
+            if (targetContent) targetContent.classList.remove('hidden');
+            if (targetBtn) {
+                targetBtn.classList.remove('bg-slate-100', 'text-slate-700');
+                targetBtn.classList.add('bg-navy-900', 'text-amber-400');
+            }
+        }
+
+        // Toast Notification System
+        function showToast(title, message, type = 'success') {
+            const toast = document.getElementById('toastNotification');
+            const toastTitle = document.getElementById('toastTitle');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastIcon = document.getElementById('toastIcon');
+
+            if (!toast) return;
+
+            toastTitle.textContent = title;
+            toastMessage.textContent = message;
+
+            if (type === 'success') {
+                toastIcon.innerHTML = '<i class="fas fa-circle-check text-emerald-400"></i>';
+            } else {
+                toastIcon.innerHTML = '<i class="fas fa-info-circle text-amber-400"></i>';
+            }
+
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 4000);
+        }
+
+        // Clipboard Copy Helper using execCommand for sandbox safety
+        function copyToClipboard(text, successMsg = 'Copied to clipboard!') {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-999999px";
+            textArea.style.top = "-999999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showToast('Copied!', successMsg, 'success');
+                } else {
+                    showToast('Notice', text, 'info');
+                }
+            } catch (err) {
+                showToast('Notice', text, 'info');
+            }
+
+            document.body.removeChild(textArea);
+        }
+
+        // Form Submission: Ask a Librarian
+        function handleLibrarianSubmit(event) {
+            event.preventDefault();
+            const btn = document.getElementById('askSubmitBtn');
+            const name = document.getElementById('askName').value;
+            const subject = document.getElementById('askSubject').value;
+
+            // Simulate sending
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> Submitting...';
+
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.innerHTML = '<span>Submit Inquiry</span> <i class="fas fa-paper-plane text-xs"></i>';
+                document.getElementById('askLibrarianForm').reset();
+                showToast('Inquiry Dispatched', `Thank you, ${name}! Your reference inquiry regarding "${subject}" has been delivered to Kabelo Ramokgopa.`, 'success');
+            }, 800);
+        }
+
+        // Form Submission: Satisfaction Survey
+        function handleSurveySubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('satisfactionSurveyForm');
+            const randomId = Math.floor(1000 + Math.random() * 9000);
+            document.getElementById('submissionId').textContent = `2026-${randomId}`;
+
+            // Show Confirmation Modal
+            const modal = document.getElementById('surveyModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+            }
+            form.reset();
+        }
+
+        function closeSurveyModal() {
+            const modal = document.getElementById('surveyModal');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        // Annual Report Preview Simulator
+        function simulateReportDownload() {
+            const modal = document.getElementById('reportModal');
+            if (modal) modal.classList.remove('hidden');
+        }
+
+        function closeReportModal() {
+            const modal = document.getElementById('reportModal');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        // Mobile Menu Drawer Handler
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const isExpanded = !mobileMenu.classList.contains('hidden');
+                if (isExpanded) {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                } else {
+                    mobileMenu.classList.remove('hidden');
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                }
+            });
+
+            // Close mobile menu when links are tapped
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                });
+            });
+        }
+
+        // Initialize application on load
+        window.onload = function() {
+            renderCatalogue();
+        };
+    </script>
+</body>
+</html>
